@@ -27,7 +27,7 @@ When *invoked*, the instance of this class passes the catched `Throwable` object
 *throwable presenter* - in order to be prepared for presentation to the user, and it 
 prints the returned response to the user, by using a *response emitter*.
 
-A throwable presenter can display the exception informations in various formats: as a templated 
+A *throwable presenter* can display the exception informations in various formats: as a templated 
 HTML code, in plain text, in Whoops library's design, etc.
 
 Depending if the application is executed in *debug mode* or not, the exception informations 
@@ -55,9 +55,9 @@ set by an error handling function (like `set_error_handler()`, for example):
 - E_COMPILE_WARNING
 
 The object of type `FatalErrorHandler` is *invoked* on shutdown, e.g. after script execution 
-finishes or `exit()` is called. It reads and handles the last occurred error by passing it 
-to a *throwable presenter* instance. The returned response is finally printed to the user with 
-a *response emitter*.
+finishes or [exit](https://www.php.net/manual/en/function.exit.php) is called. It reads and 
+handles the last occurred error by passing it to a *throwable presenter* instance. The 
+returned response is finally printed to the user with a *response emitter*.
 
 ***Note:*** In some cases, multiple types of errors are thrown at the same time. For example, 
 the control structure [require](https://www.php.net/manual/en/function.require.php) produces 
